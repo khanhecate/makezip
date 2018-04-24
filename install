@@ -1,0 +1,15 @@
+#!/bin/bash
+if [[ $EUID -ne 0 ]]; then
+	echo "are you root ?"
+	exit
+	else
+	echo "unpacking file ... "
+fi
+echo "instaling... "
+chmod 755 makezip
+cp makezip /usr/bin/
+echo "cleanig..."
+apt-get clean
+sleep 1
+echo "done"
+echo "to use you can run \"makezip\" on terminal"
